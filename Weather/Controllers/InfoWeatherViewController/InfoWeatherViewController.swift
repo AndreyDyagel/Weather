@@ -14,15 +14,16 @@ class InfoWeatherViewController: UIViewController {
     
     var network = Network()
     var convertTime = ConvertTime()
-    var weatherJSON: ((WeatherCity?)->())?
-    var weatherDataArray: [String : WeatherCity] = [:]
-    let cityArray = ["Minsk", "London", "Moscow"]
+    var weatherJSON: ((WeatherCity?) -> ())?
+    var removeCity: ((String?) -> ())?
+    var removeLastElement: String?
+    var weatherDataArray: [Int : WeatherCity] = [:]
+    var indexCity = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollViewOutlet.delegate = self
-        cityWeather(cityArray)
     }
 
 }

@@ -108,19 +108,37 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op4-Ka-CzI">
-                                <rect key="frame" x="355" y="20" width="0.0" height="0.0"/>
+                                <rect key="frame" x="355" y="315" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFe-7u-Dqn">
+                                <rect key="frame" x="330" y="20" width="25" height="24"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="addCityWeather:" destination="l9t-Fd-3wy" eventType="touchUpInside" id="hWk-9d-3n9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjC-8b-4Dm">
+                                <rect key="frame" x="20" y="20" width="25" height="24"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="editCityWeatherButtonAction:" destination="l9t-Fd-3wy" eventType="touchUpInside" id="vmt-6v-Bq3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tD3-A6-wpX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="op4-Ka-CzI" secondAttribute="bottom" constant="20" id="6yU-JJ-NxY"/>
+                            <constraint firstAttribute="trailing" secondItem="op4-Ka-CzI" secondAttribute="trailing" constant="20" id="ONp-Zo-CcH"/>
+                            <constraint firstItem="tD3-A6-wpX" firstAttribute="trailing" secondItem="kFe-7u-Dqn" secondAttribute="trailing" constant="20" id="RdG-y8-ORP"/>
                             <constraint firstItem="kWR-qv-8XP" firstAttribute="centerX" secondItem="tD3-A6-wpX" secondAttribute="centerX" id="TWq-rx-hny"/>
                             <constraint firstItem="kWR-qv-8XP" firstAttribute="centerY" secondItem="tD3-A6-wpX" secondAttribute="centerY" id="W2G-1K-63F"/>
-                            <constraint firstItem="tD3-A6-wpX" firstAttribute="trailing" secondItem="op4-Ka-CzI" secondAttribute="trailing" constant="20" id="aNn-Te-5sJ"/>
-                            <constraint firstItem="op4-Ka-CzI" firstAttribute="top" secondItem="tD3-A6-wpX" secondAttribute="top" constant="20" id="j0a-12-Cde"/>
+                            <constraint firstItem="BjC-8b-4Dm" firstAttribute="leading" secondItem="tD3-A6-wpX" secondAttribute="leading" constant="20" id="tg4-vg-boP"/>
+                            <constraint firstItem="kFe-7u-Dqn" firstAttribute="top" secondItem="tD3-A6-wpX" secondAttribute="top" constant="20" id="v8J-gO-KqL"/>
+                            <constraint firstItem="BjC-8b-4Dm" firstAttribute="top" secondItem="tD3-A6-wpX" secondAttribute="top" constant="20" id="yJm-FZ-law"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="335"/>
@@ -133,10 +151,75 @@
             </objects>
             <point key="canvasLocation" x="693.60000000000002" y="-146.17691154422789"/>
         </scene>
+        <!--Edit City View Controller-->
+        <scene sceneID="36f-F4-GnT">
+            <objects>
+                <viewController storyboardIdentifier="EditCityViewController" id="pc9-Vu-R0f" customClass="EditCityViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lmx-WG-sUU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-M5-YI2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="cXv-1P-nUy">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cXv-1P-nUy" id="zIy-vB-qrv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pc9-Vu-R0f" id="6db-G7-i9S"/>
+                                    <outlet property="delegate" destination="pc9-Vu-R0f" id="8RC-kn-fuq"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить ненужный город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-w9-E3b">
+                                <rect key="frame" x="16" y="20" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmj-gc-dTR">
+                                <rect key="frame" x="325" y="20" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="exitButtonAction:" destination="pc9-Vu-R0f" eventType="touchUpInside" id="zAw-tJ-VhY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r5w-Ph-FqP"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="e6l-M5-YI2" firstAttribute="leading" secondItem="r5w-Ph-FqP" secondAttribute="leading" id="GAd-hp-I49"/>
+                            <constraint firstItem="r5w-Ph-FqP" firstAttribute="trailing" secondItem="kmj-gc-dTR" secondAttribute="trailing" constant="20" id="Yjt-I3-Gnt"/>
+                            <constraint firstItem="e6l-M5-YI2" firstAttribute="trailing" secondItem="r5w-Ph-FqP" secondAttribute="trailing" id="fLg-nr-rJW"/>
+                            <constraint firstItem="e6l-M5-YI2" firstAttribute="top" secondItem="0p2-w9-E3b" secondAttribute="bottom" constant="20" id="jLN-zZ-URE"/>
+                            <constraint firstItem="0p2-w9-E3b" firstAttribute="leading" secondItem="r5w-Ph-FqP" secondAttribute="leading" constant="16" id="kWj-A4-hba"/>
+                            <constraint firstItem="r5w-Ph-FqP" firstAttribute="trailing" secondItem="0p2-w9-E3b" secondAttribute="trailing" constant="16" id="n6c-UN-hx9"/>
+                            <constraint firstItem="e6l-M5-YI2" firstAttribute="bottom" secondItem="r5w-Ph-FqP" secondAttribute="bottom" id="uyN-Vl-040"/>
+                            <constraint firstItem="kmj-gc-dTR" firstAttribute="top" secondItem="r5w-Ph-FqP" secondAttribute="top" constant="20" id="w69-mS-M0O"/>
+                            <constraint firstItem="0p2-w9-E3b" firstAttribute="top" secondItem="r5w-Ph-FqP" secondAttribute="top" constant="20" id="zfj-Bp-o66"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exitButtonOutlet" destination="kmj-gc-dTR" id="6Rj-AZ-GRl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnn-CK-mxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322.4000000000001" y="28.335832083958024"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

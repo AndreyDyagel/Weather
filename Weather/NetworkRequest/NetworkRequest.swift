@@ -19,7 +19,7 @@ class Network {
             let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 
                 if let data = data {
-                  complition(data)
+                   complition(data)
                 }
                 
                 if let response = response {

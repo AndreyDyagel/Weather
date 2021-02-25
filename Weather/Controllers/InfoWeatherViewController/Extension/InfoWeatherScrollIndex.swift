@@ -12,9 +12,9 @@ extension InfoWeatherViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let index = Int(scrollView.contentOffset.x / view.frame.width)
-        if index < cityArray.count {
+        if index < indexCity {
             if let indexCity = weatherJSON {
-                indexCity(weatherDataArray[cityArray[index]])
+                indexCity(weatherDataArray[index])
             }
         }
     }

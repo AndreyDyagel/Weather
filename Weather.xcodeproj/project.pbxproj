@@ -11,6 +11,7 @@
 		5502D14125E10AD5000C58EC /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502D14025E10AD5000C58EC /* NetworkRequest.swift */; };
 		5502D14925E14E39000C58EC /* ConvertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502D14825E14E39000C58EC /* ConvertTime.swift */; };
 		5502D15125E50492000C58EC /* InfoWeatherScrollIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502D15025E50492000C58EC /* InfoWeatherScrollIndex.swift */; };
+		5543557525E64CD8008494E3 /* WeatherDisplayAddCityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5543557425E64CD8008494E3 /* WeatherDisplayAddCityWeather.swift */; };
 		55C34D5225E0041F00EC7CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C34D5125E0041F00EC7CEF /* AppDelegate.swift */; };
 		55C34D5425E0041F00EC7CEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C34D5325E0041F00EC7CEF /* SceneDelegate.swift */; };
 		55C34D5925E0041F00EC7CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C34D5725E0041F00EC7CEF /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		55C34DDF25E0284F00EC7CEF /* InfoWeatherScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C34DDE25E0284F00EC7CEF /* InfoWeatherScroll.swift */; };
 		55C34DE525E02A2900EC7CEF /* CityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C34DE425E02A2900EC7CEF /* CityInfoView.swift */; };
 		55C34DED25E02A3600EC7CEF /* CityInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C34DEC25E02A3600EC7CEF /* CityInfoView.xib */; };
+		55C4F13325E7C38A004C2EAD /* EditCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C4F13225E7C38A004C2EAD /* EditCityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		5502D14025E10AD5000C58EC /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		5502D14825E14E39000C58EC /* ConvertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTime.swift; sourceTree = "<group>"; };
 		5502D15025E50492000C58EC /* InfoWeatherScrollIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWeatherScrollIndex.swift; sourceTree = "<group>"; };
+		5543557425E64CD8008494E3 /* WeatherDisplayAddCityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDisplayAddCityWeather.swift; sourceTree = "<group>"; };
 		55C34D4E25E0041F00EC7CEF /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C34D5125E0041F00EC7CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C34D5325E0041F00EC7CEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		55C34DDE25E0284F00EC7CEF /* InfoWeatherScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWeatherScroll.swift; sourceTree = "<group>"; };
 		55C34DE425E02A2900EC7CEF /* CityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoView.swift; sourceTree = "<group>"; };
 		55C34DEC25E02A3600EC7CEF /* CityInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfoView.xib; sourceTree = "<group>"; };
+		55C4F13225E7C38A004C2EAD /* EditCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,14 @@
 				5502D14025E10AD5000C58EC /* NetworkRequest.swift */,
 			);
 			path = NetworkRequest;
+			sourceTree = "<group>";
+		};
+		5543557325E64CBA008494E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5543557425E64CD8008494E3 /* WeatherDisplayAddCityWeather.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		55C34D4525E0041F00EC7CEF = {
@@ -180,6 +192,7 @@
 				55C34D8C25E00A3600EC7CEF /* MainScreenViewController */,
 				55C34DC325E01AD100EC7CEF /* WeatherDisplayViewController */,
 				55C34DCF25E01B3100EC7CEF /* InfoWeatherViewController */,
+				55C4F13125E7C351004C2EAD /* EditCityViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,22 +201,15 @@
 			isa = PBXGroup;
 			children = (
 				55C34D9025E00A7300EC7CEF /* MainScreenViewController.swift */,
-				55C34D9525E00DC300EC7CEF /* Extension */,
 			);
 			path = MainScreenViewController;
-			sourceTree = "<group>";
-		};
-		55C34D9525E00DC300EC7CEF /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		55C34DC325E01AD100EC7CEF /* WeatherDisplayViewController */ = {
 			isa = PBXGroup;
 			children = (
 				55C34DC725E01B1E00EC7CEF /* WeatherDisplayViewController.swift */,
+				5543557325E64CBA008494E3 /* Extension */,
 			);
 			path = WeatherDisplayViewController;
 			sourceTree = "<group>";
@@ -233,6 +239,14 @@
 				55C34DE425E02A2900EC7CEF /* CityInfoView.swift */,
 			);
 			path = InfoCityXib;
+			sourceTree = "<group>";
+		};
+		55C4F13125E7C351004C2EAD /* EditCityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55C4F13225E7C38A004C2EAD /* EditCityViewController.swift */,
+			);
+			path = EditCityViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C34D5225E0041F00EC7CEF /* AppDelegate.swift in Sources */,
+				5543557525E64CD8008494E3 /* WeatherDisplayAddCityWeather.swift in Sources */,
 				55C34D5425E0041F00EC7CEF /* SceneDelegate.swift in Sources */,
 				55C34DE525E02A2900EC7CEF /* CityInfoView.swift in Sources */,
 				55C34DC825E01B1E00EC7CEF /* WeatherDisplayViewController.swift in Sources */,
@@ -375,6 +390,7 @@
 				55C34DD125E01B5A00EC7CEF /* InfoWeatherViewController.swift in Sources */,
 				5502D13825E106A2000C58EC /* WeatherJSON.swift in Sources */,
 				5502D14125E10AD5000C58EC /* NetworkRequest.swift in Sources */,
+				55C4F13325E7C38A004C2EAD /* EditCityViewController.swift in Sources */,
 				5502D15125E50492000C58EC /* InfoWeatherScrollIndex.swift in Sources */,
 				55C34DDF25E0284F00EC7CEF /* InfoWeatherScroll.swift in Sources */,
 			);
