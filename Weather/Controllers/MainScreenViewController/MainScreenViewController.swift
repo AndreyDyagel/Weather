@@ -15,10 +15,10 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var infoViewContainer: UIView!
     
     var viewWasLayouted = false
-
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
+        
         if viewWasLayouted == false {
             viewWasLayouted = true
             
@@ -28,25 +28,26 @@ class MainScreenViewController: UIViewController {
             let infoWeatherViewController = storyboard.instantiateViewController(withIdentifier: "InfoWeatherViewController") as! InfoWeatherViewController
             
             if !cityArray.isEmpty {
-                for i in cityArray {
-                    infoWeatherViewController.cityWeather(i)
+                for city in cityArray {
+                    infoWeatherViewController.cityWeather(city)
                 }
             }
             
             weatherViewContainer.addSubview(weatherDisplayViewController.view)
             weatherDisplayViewController.view.translatesAutoresizingMaskIntoConstraints = false
-            infoWeatherViewController.removeCity = { (city) in
+            infoWeatherViewController.removeCity = { (_) in
                 infoWeatherViewController.removeLastElement = cityArray.last
                 if infoWeatherViewController.removeLastElement == cityArray.last {
                     cityArray.removeLast()
                     UserDefaults.standard.setValue(cityArray, forKey: "city")
                 }
             }
-            weatherDisplayViewController.city = { (city) in
-                guard let city = city else { return }
+            weatherDisplayViewController.city = { [weak self] (city) in
+                guard let city = city, let self = self else { return }
                 cityArray.append(city)
                 UserDefaults.standard.setValue(cityArray, forKey: "city")
                 infoWeatherViewController.cityWeather(city)
+                //                infoWeatherViewController.scrollViewOutlet.contentOffset = CGPoint(x: self.view.bounds.width * CGFloat(cityArray.count), y: 0)
             }
             NSLayoutConstraint.activate([
                 weatherDisplayViewController.view.topAnchor.constraint(equalTo: weatherViewContainer.topAnchor),
@@ -58,7 +59,7 @@ class MainScreenViewController: UIViewController {
             infoViewContainer.addSubview(infoWeatherViewController.view)
             infoWeatherViewController.view.translatesAutoresizingMaskIntoConstraints = false
             infoWeatherViewController.weatherJSON = { (weather) in
-                    weatherDisplayViewController.weather = weather
+                weatherDisplayViewController.weather = weather
             }
             NSLayoutConstraint.activate([
                 infoWeatherViewController.view.topAnchor.constraint(equalTo: infoViewContainer.topAnchor),
